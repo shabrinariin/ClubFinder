@@ -1,0 +1,23 @@
+{
+  "name": "clubfinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shabrinariin/ClubFinder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shabrinariin/ClubFinder/issues"
+  },
+  "homepage": "https://github.com/shabrinariin/ClubFinder#readme"
+}
