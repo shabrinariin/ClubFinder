@@ -11,16 +11,7 @@ constructor(){
     this.render();
   }
 
-  render(){
-    this.innerHTML = "";
-    this._clubs = forEach(clubs => {
-      const clubItemElement= document.createElement("club-item");
-      clubItemElement.club(club);;
-      this.shadowDOM.appendChild(clubItemElement);
-    })
-  }
-
-  renderError(message){
+   renderError(message){
     this.shadowDOM.innerHTML = `
       <style>
         .placeholder {
@@ -33,6 +24,14 @@ constructor(){
        }
     </style>`;
     this.shadowDOM.innerHTML += `<h2 class="placeholder">${message}</h2>`;
+  }
+  render(){
+    this.innerHTML = "";
+    this._clubs = forEach(clubs => {
+      const clubItemElement= document.createElement("club-item");
+      clubItemElement.club(club);;
+      this.shadowDOM.appendChild(clubItemElement);
+    })
   }
 }
 
