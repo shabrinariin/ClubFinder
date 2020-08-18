@@ -1,7 +1,7 @@
-class Search-Container extends HTMLElement {
+class SearchContainer extends HTMLElement {
   container(){
-    Super();
-    this.shadowDOM = this.attachShadow({mode : open});
+    super();
+    this.shadowDOM = this.attachShadow({mode : "open"});
   }
   connectedCallback() {
     this.render();
@@ -16,7 +16,7 @@ class Search-Container extends HTMLElement {
     return this.querySelector("#searchElement").value;
   }
   render(){
-    this.innerHTML=`
+    this.shadowDOM.innerHTML=`
     <style>
     .search-container {
         max-width: 800px;
@@ -83,8 +83,8 @@ class Search-Container extends HTMLElement {
           <button id="searchButtonElement" type="submit">Search</button>
       </div>`;
 
-      this.querySelector("#searchButtonElement").addEventListener("click", this._clickEvent);
+      this.shadowDOM.querySelector("#searchButtonElement").addEventListener("click", this._clickEvent);
   }
 }
 
-customElements.define("search-container",Search-Container);
+customElements.define("search-container",SearchContainer);

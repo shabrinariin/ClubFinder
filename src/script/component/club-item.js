@@ -1,7 +1,7 @@
 class ClubItem extends HTMLElement{
 constructor(){
   Super();
-  this.shadowDOM= this.attachShadow({mode:on});
+  this.shadowDOM= this.attachShadow({mode:"open"});
 }
   set club(club) {
     this._club=club;
@@ -48,10 +48,12 @@ constructor(){
               -webkit-line-clamp: 10; /* number of lines to show */
           }
       </style>
-        <img class="fan-art-club" src="${fanArt}" alt="Fan Art">
+        <img class="fan-art-club" src="${this._club.strTeamBadge}" alt="Fan Art">
         <div class="club-info">
-        <h2>${name}<h2>
-        <p>${description}</p>
+        <h2>${this._club.strTeam}<h2>
+        <p>${this._club.strDescriptionEN}</p>
     </div>`;
   }
 }
+
+customElements.define("club-item", ClubItem);

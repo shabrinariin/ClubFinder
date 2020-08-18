@@ -1,7 +1,14 @@
 {
   "name": "clubfinder",
   "version": "1.0.0",
+  "description": "",
   "main": "app.js",
+  "scripts": {
+    "start-dev": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "author": "shabrina",
+  "license": "ISC",
   "dependencies": {
     "regenerator-runtime": "^0.13.7"
   },
@@ -17,20 +24,5 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.1.1"
-  },
-  "scripts": {
-    "start-dev": "webpack-dev-server --config webpack.dev.js --open",
-    "build": "webpack --config webpack.prod.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shabrinariin/ClubFinder.git"
-  },
-  "author": "shabrina",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shabrinariin/ClubFinder/issues"
-  },
-  "homepage": "https://github.com/shabrinariin/ClubFinder#readme",
-  "description": ""
+  }
 }

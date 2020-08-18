@@ -3,7 +3,7 @@ import './club-item.js';
 class clubList extends HTMLElement {
 constructor(){
   Super();
-  this.shadowDOM=this.attachShadow({mode:open});
+  this.shadowDOM=this.attachShadow({mode:"open"});
 }
 
   set clubs(clubs){
@@ -11,6 +11,14 @@ constructor(){
     this.render();
   }
 
+  render(){
+    this.shadowDOM.innerHTML = "";
+    this._clubs = forEach(clubs => {
+      const clubItemElement= document.createElement("club-item");
+      clubItemElement.club=club;
+      this.shadowDOM.appendChild(clubItemElement);
+    })
+  }
    renderError(message){
     this.shadowDOM.innerHTML = `
       <style>
@@ -25,14 +33,7 @@ constructor(){
     </style>`;
     this.shadowDOM.innerHTML += `<h2 class="placeholder">${message}</h2>`;
   }
-  render(){
-    this.innerHTML = "";
-    this._clubs = forEach(clubs => {
-      const clubItemElement= document.createElement("club-item");
-      clubItemElement.club(club);;
-      this.shadowDOM.appendChild(clubItemElement);
-    })
-  }
+  
 }
 
-customElements.define("clubList", clubList);
+customElements.define("club-list", clubList);
